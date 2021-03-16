@@ -484,7 +484,7 @@ function showMsg() {
           'https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu',
       }
     );
-    notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `京东账号${$.index} ${$.nickName || $.UserName}\n🎉 本次价格保护金额：${$.refundtotalamount}💰`, { url: `https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu` })
+    notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `京东账号${$.index} ${$.nickName || $.UserName}\n🎉 本次价格保护金额：${$.refundtotalamount}💰\n价保记录：https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu` )
   }
 }
 

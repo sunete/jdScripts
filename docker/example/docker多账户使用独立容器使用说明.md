@@ -1,4 +1,4 @@
-### 使用此方式，请先理解学会使用[docker办法一](https://github.com/LXK9301/jd_scripts/tree/master/docker#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95jd_scripts%E7%94%A8%E4%BA%8E%E5%AD%98%E6%94%BE%E5%A4%87%E4%BB%BD%E9%85%8D%E7%BD%AE%E7%AD%89%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E9%87%8D%E8%A3%85%E7%9A%84%E6%97%B6%E5%80%99%E5%8F%AA%E9%9C%80%E8%A6%81%E5%A4%87%E4%BB%BD%E6%95%B4%E4%B8%AAjd_scripts%E7%9B%AE%E5%BD%95%E5%8D%B3%E5%8F%AF)的使用方式
+### 使用此方式，请先理解学会使用[docker办法一](../Readme.md)的使用方式
 > 发现有人好像希望不同账户任务并发执行，不想一个账户执行完了才能再执行另一个，这里写一个`docker办法一`的基础上实现方式，其实就是不同账户创建不同的容器，他们互不干扰单独定时执行自己的任务。
 配置使用起来还是比较简单的，具体往下看
 ### 文件夹目录参考

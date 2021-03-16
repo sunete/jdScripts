@@ -46,12 +46,12 @@ const $ = new Env('宠汪汪赛跑');
 const JD_BASE_API = `https://draw.jdfcloud.com//pet`;
 //此处填入你需要助力好友的京东用户名
 //下面给出好友邀请助力的示例填写规则
-let invite_pins = ["danwangshimoluo","danwangshimoluo","830791320_125224661","830791320_125224661","jd_NWYnCfHMIqUI","jd_53edce0d99c30","jd_NWYnCfHMIqUI"];
+let invite_pins = ["danwangshimoluo","danwangshimoluo","830791320_125224661","830791320_125224661","jd_NWYnCfHMIqUI","jd_53edce0d99c30","jd_NWYnCfHMIqUI","caojiaxin3","wslxhui","jd_6169ef6a14e73","jd_66678de45d93d","jd_5d15ada4ea0bb","caojiaxin3","s1353128160719000","jd_6e7ddc5a3b6f1","jd_4f9a40e29eb17","jd_5e5f4069466ad","jd_reFOMZYNsGzp","jd_658295d82d7fe"];
 //下面给出好友赛跑助力的示例填写规则
-let run_pins = ["danwangshimoluo","danwangshimoluo","830791320_125224661","830791320_125224661","jd_NWYnCfHMIqUI","jd_53edce0d99c30","jd_NWYnCfHMIqUI"];
+let run_pins =    ["danwangshimoluo","danwangshimoluo","830791320_125224661","830791320_125224661","jd_NWYnCfHMIqUI","jd_53edce0d99c30","jd_NWYnCfHMIqUI","caojiaxin3","wslxhui","jd_6169ef6a14e73","jd_66678de45d93d","jd_5d15ada4ea0bb","caojiaxin3","s1353128160719000","jd_6e7ddc5a3b6f1","jd_4f9a40e29eb17","jd_5e5f4069466ad","jd_reFOMZYNsGzp","jd_658295d82d7fe"];
 let temp = run_pins[0].split(',')
-let fixPins = temp.splice(temp.indexOf('danwangshimoluo'), 1);
-fixPins.push(...temp.splice(temp.indexOf('danwangshimoluo'), 1));
+let fixPins = temp.splice(temp.indexOf('danwangshimoluo'), 4);
+fixPins.push(...temp.splice(temp.indexOf('danwangshimoluo'), 4));
 const randomPins = getRandomArrayElements(temp, 4);
 temp = [...fixPins, ...randomPins];
 run_pins = [temp.join(',')];

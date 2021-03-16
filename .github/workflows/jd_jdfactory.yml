@@ -51,3 +51,4 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
           FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}
+          QYWX_AM: ${{ secrets.QYWX_AM }}

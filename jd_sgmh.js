@@ -10,7 +10,7 @@
 ============Quantumultx===============
 [task_local]
 #闪购盲盒
-20 8 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_sgmh.js, tag=闪购盲盒, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=true
+20 8 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_sgmh.js, tag=闪购盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
@@ -26,11 +26,11 @@ cron "20 8 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd
 const $ = new Env('闪购盲盒');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let appId = '1EFRRxA' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
+let appId = '1EFRXxg' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
 let lotteryResultFunPrefix = homeDataFunPrefix, browseTime = 6
 const inviteCodes = [
-  'T0206qwtB09HohePeUeryLJVCjVWmIaW5kRrbA@T026tv5zRxcY9lbXTxv2kfUIcLnkxACjVWmIaW5kRrbA@T0225KkcRR1MoQeCIE79naQJdACjVWmIaW5kRrbA@T0205KkcPnlwqyeBWGeN1ZJzCjVWmIaW5kRrbA@T0225KkcRh8f_AGBJkv1kKINdwCjVWmIaW5kRrbA@T0225KkcRhgf8lyDdR7xwP4JIACjVWmIaW5kRrbA@T010-b4vCEZcrACjVWmIaW5kRrbA@T0225KkcRUsco1DXJhPwkvFbIACjVWmIaW5kRrbA@T0225KkcREgQpFDXdRj9waULcwCjVWmIaW5kRrbA@T0205KkcAktviim9SWS3471KCjVWmIaW5kRrbA@T0225KkcRkseoQCEJUv3xvFcdQCjVWmIaW5kRrbA',
-  'T0206qwtB09HohePeUeryLJVCjVWmIaW5kRrbA@T026tv5zRxcY9lbXTxv2kfUIcLnkxACjVWmIaW5kRrbA@T0225KkcRR1MoQeCIE79naQJdACjVWmIaW5kRrbA@T0205KkcPnlwqyeBWGeN1ZJzCjVWmIaW5kRrbA@T0225KkcRh8f_AGBJkv1kKINdwCjVWmIaW5kRrbA@T0225KkcRhgf8lyDdR7xwP4JIACjVWmIaW5kRrbA@T010-b4vCEZcrACjVWmIaW5kRrbA@T0225KkcRUsco1DXJhPwkvFbIACjVWmIaW5kRrbA@T0225KkcREgQpFDXdRj9waULcwCjVWmIaW5kRrbA@T0205KkcAktviim9SWS3471KCjVWmIaW5kRrbA@T0225KkcRkseoQCEJUv3xvFcdQCjVWmIaW5kRrbA'
+  'T0206qwtB09HohePeUeryLJVCjVQmoaT5kRrbA@T026tv5zRxcY9lbXTxv2kfUIcLnkxACjVQmoaT5kRrbA@T0225KkcRR1MoQeCIE79naQJdACjVQmoaT5kRrbA@T0225KkcRh8f_AGBJkv1kKINdwCjVQmoaT5kRrbA@T0205KkcPnlwqyeBWGeN1ZJzCjVQmoaT5kRrbA@T0225KkcRhgf8lyDdR7xwP4JIACjVQmoaT5kRrbA@T010-b4vCEZcrACjVQmoaT5kRrbA@T0147awsGkdIvQ2JIwCjVQmoaT5kRrbA@T0205KkcAktviim9SWS3471KCjVQmoaT5kRrbA@T0225KkcRUsco1DXJhPwkvFbIACjVQmoaT5kRrbA@T0225KkcREgQpFDXdRj9waULcwCjVQmoaT5kRrbA@T0225KkcRkseoQCEJUv3xvFcdQCjVQmoaT5kRrbA@T0225KkcRUoY8AWDcR6hxfdYJgCjVQmoaT5kRrbA',
+  'T0206qwtB09HohePeUeryLJVCjVQmoaT5kRrbA@T026tv5zRxcY9lbXTxv2kfUIcLnkxACjVQmoaT5kRrbA@T0225KkcRR1MoQeCIE79naQJdACjVQmoaT5kRrbA@T0225KkcRh8f_AGBJkv1kKINdwCjVQmoaT5kRrbA@T0205KkcPnlwqyeBWGeN1ZJzCjVQmoaT5kRrbA@T0225KkcRhgf8lyDdR7xwP4JIACjVQmoaT5kRrbA@T010-b4vCEZcrACjVQmoaT5kRrbA@T0147awsGkdIvQ2JIwCjVQmoaT5kRrbA@T0205KkcAktviim9SWS3471KCjVQmoaT5kRrbA@T0225KkcRUsco1DXJhPwkvFbIACjVQmoaT5kRrbA@T0225KkcREgQpFDXdRj9waULcwCjVQmoaT5kRrbA@T0225KkcRkseoQCEJUv3xvFcdQCjVQmoaT5kRrbA@T0225KkcRUoY8AWDcR6hxfdYJgCjVQmoaT5kRrbA',
 ];
 const randomCount = 0 ;
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -43,13 +43,7 @@ if ($.isNode()) {
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
 } else {
-  let cookiesData = $.getdata('CookiesJD') || "[]";
-  cookiesData = jsonParse(cookiesData);
-  cookiesArr = cookiesData.map(item => item.cookie);
-  cookiesArr.reverse();
-  cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
-  cookiesArr.reverse();
-  cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
+  cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 
 const JD_API_HOST = `https://api.m.jd.com/client.action`;
@@ -110,8 +104,6 @@ function interact_template_getHomeData(timeout = 0) {
           data = JSON.parse(data);
           if (data.data.bizCode !== 0) {
             console.log(data.data.bizMsg);
-            merge.jdBeans.fail++;
-            merge.jdBeans.notify = `${data.data.bizMsg}`;
             return
           }
           scorePerLottery = data.data.result.userInfo.scorePerLottery||data.data.result.userInfo.lotteryMinusScore
@@ -120,7 +112,7 @@ function interact_template_getHomeData(timeout = 0) {
           for (let i = 0;i < data.data.result.taskVos.length;i ++) {
             console.log("\n" + data.data.result.taskVos[i].taskType + '-' + data.data.result.taskVos[i].taskName  + '-' + (data.data.result.taskVos[i].status === 1 ? `已完成${data.data.result.taskVos[i].times}-未完成${data.data.result.taskVos[i].maxTimes}` : "全部已完成"))
             //签到
-            if (data.data.result.taskVos[i].taskName === '邀人助力任务') {
+            if (data.data.result.taskVos[i].taskName === '邀请好友助力') {
               console.log(`您的好友助力码为:${data.data.result.taskVos[i].assistTaskDetailVo.taskToken}`)
               for (let code of $.newShareCodes) {
                 if (!code) continue
@@ -370,7 +362,11 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            $.nickName = data['base'].nickname;
+            if (data['retcode'] === 0) {
+              $.nickName = data['base'].nickname;
+            } else {
+              $.nickName = $.UserName
+            }
           } else {
             console.log(`京东服务器返回空数据`)
           }

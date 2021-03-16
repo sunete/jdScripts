@@ -58,7 +58,7 @@ pip install docker-compose
 国内一键安装 `sudo curl -sSL https://get.daocloud.io/docker | sh`
 国外一键安装 `sudo curl -sSL get.docker.com | sh`
 
-### 如果需要使用 docker 多个账户独立并发执行定时任务，[参考这里](https://github.com/iouAkira/scripts/blob/patch-1/docker/docker%E5%A4%9A%E8%B4%A6%E6%88%B7%E4%BD%BF%E7%94%A8%E7%8B%AC%E7%AB%8B%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md#%E4%BD%BF%E7%94%A8%E6%AD%A4%E6%96%B9%E5%BC%8F%E8%AF%B7%E5%85%88%E7%90%86%E8%A7%A3%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8docker%E5%8A%9E%E6%B3%95%E4%B8%80%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F)  
+### 如果需要使用 docker 多个账户独立并发执行定时任务，[参考这里](./example/docker多账户使用独立容器使用说明.md)  
 
 > 注⚠️：前提先理解学会使用这下面的教程
 ### 创建一个目录`jd_scripts`用于存放备份配置等数据，迁移重装的时候只需要备份整个jd_scripts目录即可
@@ -199,7 +199,7 @@ jd_scripts
  `docker-compose down` 停止并删除容器；  
 
 - 你可能会用到的命令
-   
+  
    `docker exec -it jd_scripts /bin/sh -c 'git -C /scripts pull && node /scripts/jd_bean_change.js'`  手动运行一脚本
    
    `docker exec -it jd_scripts /bin/sh -c 'env'`  查看设置的环境变量
@@ -209,7 +209,7 @@ jd_scripts
    `docker exec -it jd_scripts /bin/sh` 仅进入容器命令
    
    `rm -rf  logs/*.log` 删除logs文件夹里面所有的日志文件
- 
+
 - 如果是群晖用户，在docker注册表搜jd_scripts，双击下载映像。
 不需要docker-compose.yml，只需建个logs/目录，调整`jd_scripts.syno.json`里面对应的配置值，然后导入json配置新建容器。
 若要自定义my_crontab_list.sh，再建个my_crontab_list.sh文件，配置参考`jd_scripts.my_crontab_list.syno.json`。

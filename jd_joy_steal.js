@@ -291,7 +291,7 @@ async function helpFriendsFeed() {
 function getFriends(currentPage = '1') {
   return new Promise(resolve => {
     let opt = {
-      url: `//jdjoy.jd.com/common/pet/getFriends?itemsPerPage=20&currentPage=${currentPage * 1}&reqSource=h5`,
+      url: `//jdjoy.jd.com/common/pet/h5/getFriends?itemsPerPage=20&currentPage=${currentPage * 1}&reqSource=h5`,
       // url: `//draw.jdfcloud.com/common/pet/getPetTaskConfig?reqSource=h5`,
       method: "GET",
       data: {},
@@ -583,7 +583,11 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            $.nickName = data['base'].nickname;
+            if (data['retcode'] === 0) {
+              $.nickName = (data['base'] && data['base'].nickname) || $.UserName;
+            } else {
+              $.nickName = $.UserName
+            }
           } else {
             console.log(`京东服务器返回空数据`)
           }
